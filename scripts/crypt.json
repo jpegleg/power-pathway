@@ -1,0 +1,4 @@
+[
+  {"destination": "/tmp/example1.enc", "sample": "Sample1.bin", "target": "/tmp/example1.txt"},
+  {"destination": "/tmp/example2.enc", "sample": "Sample1.bin", "target": "/tmp/example2.txt"}
+]
