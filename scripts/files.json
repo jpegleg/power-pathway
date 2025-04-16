@@ -1,0 +1,4 @@
+[
+  {"target": "/bin/bash", "pub_path": "/root/fu.pub", "key_path": "/root/fu.key", "sig_path": "/root/fu.sig", "uid_path": "d0fce8b7-4374-42c9-b1ef-56c7ed3c490e"},
+  {"target": "/bin/sh", "pub_path": "/root/fo.pub", "key_path": "/root/fo.key", "sig_path": "/root/fo.sig", "uid_path": "9180444a-8ed1-4065-ad02-d82b443e8249"}
+]
