@@ -14,8 +14,9 @@ if ( stat /usr/local/bin/wormsign ) {
     echo "compiling wormsign..."
     git clone https://github.com/jpegleg/wormsign
     cd wormsign
-    cargo build --release
+    cargo build --release --all
     cp target/release/wormsign /usr/local/bin/
+    cp target/release/wormsign-confgen /usr/local/bin/
     cd ..
 }
 
