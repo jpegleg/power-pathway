@@ -6,7 +6,7 @@ if ( stat ~/.config/powershell ) {
 }
 
 echo "Copying prompt file to PowerShell config dir..."
-cp Microsoft.PowerShell_profile.ps1 /root/.config/powershell/
+cp Microsoft.PowerShell_profile.ps1 ~/.config/powershell/
 
 if ( stat /usr/local/bin/wormsign ) {
     echo "wormsign found..."
