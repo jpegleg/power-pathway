@@ -5,13 +5,13 @@ Get-Content ./files.json -Raw |
         $signature = $_.sig_path
         $key_path = $_.key_path
         $pub_path = $_.pub_path
+        $uidir_path = $_.uid_path
         if (Test-Path $path) {
             "$path => file found, processing..."
-            $rdir = (uidgen)
-            mkdir $rdir
-            cd $rdir
+            mkdir $uidir_path 2>/dev/null
+            cd $uidir_path
             wormsign-confgen $path $pub_path $signature $key_path
-            wormsign -ats
+            wormsign -ats > sign.json
         } else {
             "$path => file not found, skipping..."
         }
