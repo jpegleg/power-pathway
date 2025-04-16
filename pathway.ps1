@@ -29,3 +29,21 @@ if ( stat /usr/local/bin/AES256CTR ) {
     cp target/release/AES256CTR /usr/local/bin/
     cd ..
 }
+
+if ( stat /usr/local/bin/crown ) {
+    echo "crown found..."
+} else { 
+    echo "compiling crown..."
+    git clone https://github.com/jpegleg/dwarven-toolbox
+    cd dwarven-toolbox
+    mv ./no-zlib_Cargo.toml Cargo.toml
+    cargo build --release --all
+    $packages = Get-Content README.md | Where-Object { $_ -match '^-' -and $_ -notmatch '84' } | ForEach-Object {
+        ($_ -split '-')[1].Trim()
+    }
+    foreach ($x in $packages) {
+        Write-Host "Installing $x"
+        Copy-Item -Path "target/release/$x" -Destination "/usr/local/bin/" -Force
+    }
+    cd ..
+}
