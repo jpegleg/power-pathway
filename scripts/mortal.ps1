@@ -2,7 +2,7 @@ $PWord = Read-Host -Prompt 'Enter AES256CTR password' -AsSecureString
 $ptr   = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($PWord)
 $pass  = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($ptr)
 
-$Env:TEMPAESP = $pass
+$Env:TMPAESP = $pass
 
 Get-Content ./crypt.json -Raw |
     ConvertFrom-Json |
